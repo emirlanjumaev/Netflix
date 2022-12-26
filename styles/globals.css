@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  body {
+    @apply bg-[#141414] text-white scrollbar-thin scrollbar-thumb-red-600;
+  }
+
+  header {
+    @apply flex items-center justify-between py-4 px-5 fixed top-0 z-50 w-full transition-all lg:px-10 lg:py-6;
+  }
+}
+
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+  @apply px-1 sm:px-4 md:px-5;
+}
+
+@layer components {
+  .rows_btn {
+    font-size: 24px;
+    position: absolute;
+  }
+
+  .banner_box::after {
+    content: '';
+    bottom: 0;
+    @apply block w-full h-[200px] bg-gradient-to-t from-black absolute  left-0 z-40;
+  }
+  .banner_box::before {
+    content: '';
+    bottom: -198px;
+    @apply block w-full h-[200px] bg-gradient-to-b from-black absolute  left-0 z-40;
+  }
+  .bannerBtn {
+    @apply flex items-center gap-x-2 rounded-[3px]  h-[40px]  py-1 px-2 text-[16px]  font-medium md:text-[14px] lg:text-[18px];
+  }
+  .header_link {
+    @apply cursor-pointer text-sm font-normal text-[#e5e5e5] transition duration-[.4s] hover:text-[#a9a9a9];
+  }
+}
+.slick-arrow::after,
+.slick-arrow::before {
+  content: '' !important;
+}
+
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+  display: none !important;
+}
+
+.gr-row .slick-arrow {
+  display: none;
+}
+.gr-row:hover .slick-arrow {
+  display: block;
+}
+
+.slick-arrow svg {
+  font-size: 32px;
+  color: white;
+}
